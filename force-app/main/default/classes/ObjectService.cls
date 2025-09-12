@@ -8,7 +8,7 @@ public with sharing class ObjectService {
         }
             objectNames.sort();
         return objectNames;
-    }
+    } 
 
 
     @AuraEnabled(cacheable=true)
@@ -43,7 +43,7 @@ public with sharing class ObjectService {
 
        @AuraEnabled
     public static List<SObject> getRecords(String objectApiName, List<String> selectedFields , Integer offsetSize, Integer limitSize) {
-         if (selectedFields == null || selectedFields.isEmpty()) {
+         if ( selectedFields.isEmpty()) {
         selectedFields = new List<String>{'Id'};
     }
          if (!selectedFields.contains('Id')) {
